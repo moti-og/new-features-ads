@@ -383,13 +383,6 @@ function submitFeatureRequest(event) {
     event.target.reset();
 }
 
-function showRoadmap() {
-    document.getElementById('roadmapModal').classList.add('show');
-}
-
-function closeRoadmap() {
-    document.getElementById('roadmapModal').classList.remove('show');
-}
 
 // Add CSS animations dynamically
 const style = document.createElement('style');

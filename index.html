@@ -167,9 +167,10 @@
             <button class="feedback-btn" onclick="showFeedbackModal()">
                 💬 Suggest a Feature
             </button>
-            <button class="roadmap-btn" onclick="showRoadmap()">
-                🗺️ View Roadmap
-            </button>
+            <a href="https://opengov-roadmap.vercel.app/roadmap" target="_blank" class="roadmap-link">
+                🗺️ View Product Roadmap
+                <span class="external-icon">↗</span>
+            </a>
         </div>
     </div>
 
@@ -192,44 +193,6 @@
         </div>
     </div>
 
-    <div class="modal" id="roadmapModal">
-        <div class="modal-content roadmap-modal">
-            <span class="close-modal" onclick="closeRoadmap()">&times;</span>
-            <h2>Feature Roadmap</h2>
-            <div class="roadmap-timeline">
-                <div class="timeline-item completed">
-                    <div class="timeline-marker">✓</div>
-                    <div class="timeline-content">
-                        <h4>Q3 2024 - Completed</h4>
-                        <ul>
-                            <li>New Contracts Landing Page</li>
-                            <li>Enhanced Vendor Management</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item current">
-                    <div class="timeline-marker">🚀</div>
-                    <div class="timeline-content">
-                        <h4>Q4 2024 - Current</h4>
-                        <ul>
-                            <li>Advanced Reporting Dashboard</li>
-                            <li>Mobile App Integration</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item upcoming">
-                    <div class="timeline-marker">📅</div>
-                    <div class="timeline-content">
-                        <h4>Q1 2025 - Upcoming</h4>
-                        <ul>
-                            <li>AI-Powered Insights</li>
-                            <li>Custom Workflow Builder</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
