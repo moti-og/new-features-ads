@@ -10,6 +10,12 @@ body {
     min-height: 100vh;
     color: #333;
     padding: 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Page Header */
@@ -209,7 +215,7 @@ body {
     box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     display: none;
     z-index: 1000;
-    max-height: 600px;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
 }
 

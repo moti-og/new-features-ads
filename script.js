@@ -91,6 +91,11 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     dropdown.style.left = (rect.left + window.scrollX) + 'px';
     dropdown.style.right = 'auto';
     
+    // Calculate available space below the button
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const dropdownMaxHeight = Math.min(600, spaceBelow - 40);
+    dropdown.style.maxHeight = Math.max(300, dropdownMaxHeight) + 'px';
+    
     // Render content based on mode
     renderFeaturesForMode(mode);
     
@@ -124,6 +129,16 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     
     dropdown.classList.add('show');
     buttonElement.classList.add('active');
+    
+    // Ensure dropdown is visible in viewport
+    setTimeout(() => {
+        const dropdownRect = dropdown.getBoundingClientRect();
+        const isFullyVisible = dropdownRect.bottom <= window.innerHeight;
+        
+        if (!isFullyVisible) {
+            dropdown.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }, 100);
 }
 
 // Close dropdown
@@ -389,7 +404,7 @@ function renderSuggestionsFeatures() {
 function renderLearnMoreFeatures() {
     const featuresList = document.getElementById('featuresList');
     const helpUrl = "https://opengov.my.site.com/support/s/";
-    const demoUrl = "https://www.youtube.com/watch?v=2qBlE2-WL60";
+    const demoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1";
     const learnMoreFeatures = [
         { 
             id: 1, 
