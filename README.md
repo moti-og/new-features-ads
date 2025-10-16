@@ -105,8 +105,7 @@ That's it! The prototype runs entirely in your browser with no dependencies or s
 - **Product Roadmap:** `https://opengov-roadmap.vercel.app/roadmap`
 - **Demo Video:** `https://www.youtube.com/watch?v=2qBlE2-WL60`
 
-### Integration Points (Placeholder)
+### Integration Ideas
 - **Jira/Aha:** Auto-populate release notes
 - **Analytics:** Track adoption rates, feature usage
-- **User Management:** Real adoption percentages
 - **Notification System:** Push alerts for new features
