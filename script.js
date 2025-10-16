@@ -388,27 +388,28 @@ function renderSuggestionsFeatures() {
 // 9. Learn More - Features with documentation links and demo buttons
 function renderLearnMoreFeatures() {
     const featuresList = document.getElementById('featuresList');
+    const demoUrl = "https://www.youtube.com/watch?v=EE-xtCF3T94&list=PL9JM2aC37BG03vlqyhiYX54NG_thqqvbg";
     const learnMoreFeatures = [
         { 
             id: 1, 
             title: "Contracts Landing Page", 
             description: "Personalize your contracts list with the columns and filters you need",
             helpUrl: "https://help.opengov.com/contracts/landing-page",
-            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+            demoUrl: demoUrl
         },
         { 
             id: 2, 
             title: "Vendor Management", 
             description: "Easily search, filter, and toggle between subscriber and vendor views",
             helpUrl: "https://help.opengov.com/vendors/management",
-            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+            demoUrl: demoUrl
         },
         { 
             id: 3, 
             title: "Insights Dashboard", 
             description: "Create custom reports with drag-and-drop widgets and real-time data",
             helpUrl: "https://help.opengov.com/analytics/insights-dashboard",
-            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+            demoUrl: demoUrl
         }
     ];
     
@@ -425,7 +426,7 @@ function renderLearnMoreFeatures() {
                     📖 Learn More
                     <span class="external-icon">↗</span>
                 </a>
-                <a href="${f.demoUrl}" target="_blank" class="learn-more-link demo-link">
+                <a href="javascript:void(0);" onclick="showDemoLoading('${f.demoUrl}')" class="learn-more-link demo-link">
                     🎮 Try Demo
                     <span class="external-icon">↗</span>
                 </a>
@@ -665,6 +666,17 @@ function submitFeatureRequest(event) {
     event.target.reset();
 }
 
+// Show loading modal for demo
+function showDemoLoading(url) {
+    const modal = document.getElementById('loadingModal');
+    modal.classList.add('show');
+    
+    // Wait 2 seconds, then open the URL and close modal
+    setTimeout(() => {
+        window.open(url, '_blank');
+        modal.classList.remove('show');
+    }, 2000);
+}
 
 // Add CSS animations dynamically
 const style = document.createElement('style');

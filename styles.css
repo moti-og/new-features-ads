@@ -690,6 +690,45 @@ input:checked + .slider:before {
     transform: translateY(-2px);
 }
 
+/* Loading Modal */
+.loading-modal-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.loading-modal-content h2 {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    margin: 1.5rem 0 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
 
 /* Responsive Dropdown */
 @media (max-width: 768px) {
