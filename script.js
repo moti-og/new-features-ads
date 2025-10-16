@@ -91,11 +91,6 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     dropdown.style.left = (rect.left + window.scrollX) + 'px';
     dropdown.style.right = 'auto';
     
-    // Calculate available space below the button
-    const spaceBelow = window.innerHeight - rect.bottom;
-    const dropdownMaxHeight = Math.min(600, spaceBelow - 40);
-    dropdown.style.maxHeight = Math.max(300, dropdownMaxHeight) + 'px';
-    
     // Render content based on mode
     renderFeaturesForMode(mode);
     
@@ -130,19 +125,10 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     dropdown.classList.add('show');
     buttonElement.classList.add('active');
     
-    // Ensure dropdown is visible in viewport
+    // Scroll to button to ensure dropdown is visible
     setTimeout(() => {
-        const dropdownRect = dropdown.getBoundingClientRect();
-        const dropdownHeight = dropdown.offsetHeight;
-        const buttonRect = buttonElement.getBoundingClientRect();
-        const spaceNeeded = buttonRect.top + buttonRect.height + dropdownHeight + 50; // 50px buffer
-        
-        // Check if there's enough space
-        if (spaceNeeded > window.innerHeight) {
-            // Scroll the button into view with some top offset
-            buttonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, 100);
+        buttonElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 50);
 }
 
 // Close dropdown
