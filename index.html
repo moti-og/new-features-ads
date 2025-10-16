@@ -27,6 +27,15 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Badge Count:</strong> Shows total # of features released in last 30 days</li>
+                    <li><strong>Disappears:</strong> When count reaches 0 or user dismisses all</li>
+                    <li><strong>Updates:</strong> Real-time when new features are released</li>
+                    <li><strong>Interaction:</strong> Click to see simple list with on/off toggles</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Grid Item 2: With Release Notes Link -->
@@ -41,6 +50,15 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Link Location:</strong> "View Full Release Notes" appears in dropdown header</li>
+                    <li><strong>Opens:</strong> New tab with complete changelog organized by version</li>
+                    <li><strong>Content:</strong> Shows Jira tickets, contributors, and version history</li>
+                    <li><strong>Filterable:</strong> Search and filter by Features, Improvements, or Fixes</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Grid Item 3: Confetti Celebration -->
@@ -54,6 +72,15 @@
                     🎉 New Features
                     <span class="dropdown-arrow">▼</span>
                 </button>
+            </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Triggers:</strong> When user toggles feature ON (not OFF)</li>
+                    <li><strong>Duration:</strong> 3-second multi-burst confetti animation</li>
+                    <li><strong>Notification:</strong> Toast message "🎉 [Feature] is now enabled!"</li>
+                    <li><strong>Frequency:</strong> Once per feature enable (no repeat on same session)</li>
+                </ul>
             </div>
         </div>
 
@@ -70,6 +97,15 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Display:</strong> Live countdown in days, hours, minutes, seconds</li>
+                    <li><strong>Updates:</strong> Every second in real-time</li>
+                    <li><strong>At Launch:</strong> Shows "🚀 Available Now!" and toggle becomes active</li>
+                    <li><strong>Badge Count:</strong> Number on button = # of upcoming features</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Grid Item 5: Multiple Badge Types -->
@@ -85,6 +121,15 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>NEW Badge:</strong> Red/pulsing - appears for 14 days after release</li>
+                    <li><strong>HOT Badge:</strong> Pink/🔥 - shown when adoption rate >50% in first week</li>
+                    <li><strong>Coming Soon:</strong> Blue/⏰ - for features launching within 7 days</li>
+                    <li><strong>Multiple:</strong> A feature can have multiple badges simultaneously</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Grid Item 6: With Roadmap -->
@@ -99,9 +144,18 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Link:</strong> "View Product Roadmap" button in dropdown footer</li>
+                    <li><strong>Opens:</strong> External roadmap site in new tab</li>
+                    <li><strong>Status Icons:</strong> ✓ Released, 🚀 In Progress, 📅 Upcoming</li>
+                    <li><strong>Context:</strong> Shows quarter (Q3 2024) and timeline placement</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Grid Item 7: Adoption Metrics -->
+        <!-- Grid Item 7: With Adoption Metrics -->
         <div class="grid-item">
             <div class="grid-label">
                 <h3>7. With Adoption Metrics</h3>
@@ -113,6 +167,15 @@
                     <span style="color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 600;">78%</span>
                     <span class="dropdown-arrow">▼</span>
                 </button>
+            </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Progress Bars:</strong> Visual percentage of users who enabled feature</li>
+                    <li><strong>Updates:</strong> Real-time as users across org enable/disable</li>
+                    <li><strong>Calculation:</strong> (Users w/ feature ON) / (Total active users)</li>
+                    <li><strong>Increases:</strong> When YOU enable, shows your contribution to adoption</li>
+                </ul>
             </div>
         </div>
 
@@ -128,6 +191,15 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Button Location:</strong> "💬 Suggest a Feature" in dropdown footer</li>
+                    <li><strong>Opens:</strong> Modal with form (Title, Description, Priority)</li>
+                    <li><strong>Submission:</strong> Triggers confetti + success notification</li>
+                    <li><strong>Integration:</strong> Could connect to Jira, ProductBoard, or email</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Grid Item 9: All Features Combined -->
@@ -142,6 +214,15 @@
                     <span class="feature-count-badge">4</span>
                     <span class="dropdown-arrow">▼</span>
                 </button>
+            </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Combines ALL:</strong> Badge count + Release notes + Confetti + Timers</li>
+                    <li><strong>Smart Mixing:</strong> Shows appropriate badges per feature (NEW/HOT/countdown)</li>
+                    <li><strong>Full Footer:</strong> Both "Suggest Feature" and "View Roadmap" buttons</li>
+                    <li><strong>Complete UX:</strong> All metrics, animations, and interactions active</li>
+                </ul>
             </div>
         </div>
     </div>
