@@ -54,18 +54,125 @@ const features = [
     }
 ];
 
+// Current active button
+let currentButton = null;
+let currentMode = null;
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', function() {
-    renderFeatures();
-    initializeDropdown();
+    initializeAllButtons();
     startCountdownTimers();
-    updateFeatureCount();
 });
 
-// Render features in the dropdown
-function renderFeatures() {
+// Initialize all buttons with their specific modes
+function initializeAllButtons() {
+    const buttons = [
+        { id: 'btn1', mode: 'basic' },
+        { id: 'btn2', mode: 'release-notes' },
+        { id: 'btn3', mode: 'confetti' },
+        { id: 'btn4', mode: 'countdown' },
+        { id: 'btn5', mode: 'badges' },
+        { id: 'btn6', mode: 'roadmap' },
+        { id: 'btn7', mode: 'metrics' },
+        { id: 'btn8', mode: 'suggestions' },
+        { id: 'btn9', mode: 'full' }
+    ];
+    
+    buttons.forEach(btn => {
+        const element = document.getElementById(btn.id);
+        if (element) {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openDropdownForButton(btn.id, btn.mode, element);
+            });
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        const dropdown = document.getElementById('featuresDropdown');
+        if (!dropdown.contains(e.target) && currentButton) {
+            closeDropdown();
+        }
+    });
+}
+
+// Open dropdown for specific button
+function openDropdownForButton(buttonId, mode, buttonElement) {
+    currentButton = buttonElement;
+    currentMode = mode;
+    
+    const dropdown = document.getElementById('featuresDropdown');
+    const rect = buttonElement.getBoundingClientRect();
+    
+    // Position dropdown below the button
+    dropdown.style.position = 'absolute';
+    dropdown.style.top = (rect.bottom + window.scrollY + 10) + 'px';
+    dropdown.style.left = (rect.left + window.scrollX) + 'px';
+    dropdown.style.right = 'auto';
+    
+    // Render content based on mode
+    renderFeaturesForMode(mode);
+    
+    // Show/hide elements based on mode
+    document.getElementById('releaseNotesLink').style.display = 
+        (mode === 'release-notes' || mode === 'full') ? 'block' : 'none';
+    document.getElementById('dropdownFooter').style.display = 
+        (mode === 'suggestions' || mode === 'roadmap' || mode === 'full') ? 'flex' : 'none';
+    
+    dropdown.classList.add('show');
+    buttonElement.classList.add('active');
+}
+
+// Close dropdown
+function closeDropdown() {
+    const dropdown = document.getElementById('featuresDropdown');
+    dropdown.classList.remove('show');
+    if (currentButton) {
+        currentButton.classList.remove('active');
+    }
+    currentButton = null;
+    currentMode = null;
+}
+
+// Render features based on mode
+function renderFeaturesForMode(mode) {
     const featuresList = document.getElementById('featuresList');
-    featuresList.innerHTML = features.map(feature => `
+    let featuresToShow = [...features];
+    
+    switch(mode) {
+        case 'basic':
+            featuresToShow = features.slice(0, 4);
+            break;
+        case 'confetti':
+            featuresToShow = features.filter(f => !f.countdown).slice(0, 2);
+            break;
+        case 'countdown':
+            featuresToShow = features.filter(f => f.countdown);
+            break;
+        case 'badges':
+            featuresToShow = features;
+            break;
+        case 'metrics':
+            featuresToShow = features.slice(0, 4);
+            break;
+        case 'full':
+            featuresToShow = features;
+            break;
+        default:
+            featuresToShow = features.slice(0, 4);
+    }
+    
+    renderFeatures(featuresToShow, mode);
+}
+
+// Render features in the dropdown
+function renderFeatures(featuresToShow = features, mode = 'full') {
+    const featuresList = document.getElementById('featuresList');
+    const showConfetti = (mode === 'confetti' || mode === 'full');
+    const showMetrics = (mode === 'metrics' || mode === 'full');
+    
+    featuresList.innerHTML = featuresToShow.map(feature => `
         <div class="feature-item" data-feature-id="${feature.id}">
             <div class="feature-header">
                 <div class="feature-title-wrapper">
@@ -104,25 +211,6 @@ function renderFeatures() {
     `).join('');
 }
 
-// Initialize dropdown toggle
-function initializeDropdown() {
-    const btn = document.getElementById('newFeaturesBtn');
-    const dropdown = document.getElementById('featuresDropdown');
-    
-    btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
-        btn.classList.toggle('active');
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target) && e.target !== btn) {
-            dropdown.classList.remove('show');
-            btn.classList.remove('active');
-        }
-    });
-}
 
 // Toggle feature on/off with confetti celebration
 function toggleFeature(featureId, enabled) {
@@ -131,8 +219,10 @@ function toggleFeature(featureId, enabled) {
         feature.enabled = enabled;
         
         if (enabled) {
-            // Trigger confetti celebration!
-            triggerConfetti();
+            // Trigger confetti celebration only for confetti and full modes
+            if (currentMode === 'confetti' || currentMode === 'full') {
+                triggerConfetti();
+            }
             
             // Show a success message
             showNotification(`🎉 ${feature.title} is now enabled!`);
@@ -140,7 +230,7 @@ function toggleFeature(featureId, enabled) {
             // Simulate adoption rate increase
             setTimeout(() => {
                 feature.adoptionRate = Math.min(100, feature.adoptionRate + Math.floor(Math.random() * 10) + 5);
-                renderFeatures();
+                renderFeaturesForMode(currentMode);
             }, 1000);
         } else {
             showNotification(`${feature.title} has been disabled`);
@@ -268,11 +358,6 @@ function updateCountdown(feature) {
     `;
 }
 
-// Update feature count badge
-function updateFeatureCount() {
-    const newFeaturesCount = features.filter(f => f.isNew).length;
-    document.getElementById('featureCountBadge').textContent = newFeaturesCount;
-}
 
 // Format date helper
 function formatDate(dateString) {
