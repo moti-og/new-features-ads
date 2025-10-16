@@ -138,32 +138,241 @@ function closeDropdown() {
 // Render features based on mode
 function renderFeaturesForMode(mode) {
     const featuresList = document.getElementById('featuresList');
-    let featuresToShow = [...features];
     
     switch(mode) {
         case 'basic':
-            featuresToShow = features.slice(0, 4);
+            renderBasicFeatures();
+            break;
+        case 'release-notes':
+            renderReleaseNotesFeatures();
             break;
         case 'confetti':
-            featuresToShow = features.filter(f => !f.countdown).slice(0, 2);
+            renderConfettiFeatures();
             break;
         case 'countdown':
-            featuresToShow = features.filter(f => f.countdown);
+            renderCountdownFeatures();
             break;
         case 'badges':
-            featuresToShow = features;
+            renderBadgeFeatures();
+            break;
+        case 'roadmap':
+            renderRoadmapFeatures();
             break;
         case 'metrics':
-            featuresToShow = features.slice(0, 4);
+            renderMetricsFeatures();
+            break;
+        case 'suggestions':
+            renderSuggestionsFeatures();
             break;
         case 'full':
-            featuresToShow = features;
+            renderFullFeatures();
             break;
         default:
-            featuresToShow = features.slice(0, 4);
+            renderBasicFeatures();
     }
+}
+
+// 1. Basic - Just simple list with toggles
+function renderBasicFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const basicFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", enabled: true },
+        { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", enabled: true },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets and real-time data", enabled: false },
+        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", enabled: false }
+    ];
     
-    renderFeatures(featuresToShow, mode);
+    featuresList.innerHTML = basicFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" ${f.enabled ? 'checked' : ''}>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="feature-description">${f.description}</div>
+        </div>
+    `).join('');
+}
+
+// 2. Release Notes - Simple list with link to release notes page
+function renderReleaseNotesFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const releaseFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", version: "v2.1.0" },
+        { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", version: "v2.2.0" },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets", version: "v2.3.0" },
+        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go", version: "v2.4.0" }
+    ];
+    
+    featuresList.innerHTML = releaseFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                    <span style="color: #888; font-size: 0.85rem; margin-left: 0.5rem;">${f.version}</span>
+                </div>
+            </div>
+            <div class="feature-description">${f.description}</div>
+        </div>
+    `).join('');
+}
+
+// 3. Confetti - Features that trigger confetti on enable
+function renderConfettiFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const confettiFeatures = [
+        { id: 1, title: "Advanced Reporting Dashboard", description: "Toggle ON to see confetti celebration! 🎉", enabled: false },
+        { id: 2, title: "Mobile App Integration", description: "Enable this feature for a surprise! 🎊", enabled: false }
+    ];
+    
+    featuresList.innerHTML = confettiFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" ${f.enabled ? 'checked' : ''} onchange="toggleFeature(${f.id}, this.checked)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="feature-description">${f.description}</div>
+        </div>
+    `).join('');
+}
+
+// 4. Countdown - Only features with countdown timers
+function renderCountdownFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const countdownFeatures = [
+        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", launchDate: new Date("2024-10-25T09:00:00") },
+        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date("2024-11-15T09:00:00") }
+    ];
+    
+    featuresList.innerHTML = countdownFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+            </div>
+            <div class="feature-description">${f.description}</div>
+            <div class="countdown-timer" id="countdown-${f.id}">
+                <!-- Countdown will be inserted here -->
+            </div>
+        </div>
+    `).join('');
+    
+    // Update countdowns
+    countdownFeatures.forEach(f => updateCountdownForFeature(f));
+}
+
+// 5. Badges - Features with different badge types
+function renderBadgeFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const badgeFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Just released this week", badge: 'new' },
+        { id: 2, title: "Enhanced Vendor Management", description: "Trending feature with high adoption", badge: 'hot' },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Popular among power users", badge: 'new' },
+        { id: 4, title: "Mobile App Integration", description: "Coming very soon!", badge: 'coming-soon' },
+        { id: 5, title: "AI-Powered Insights", description: "Highly anticipated feature", badge: 'hot' }
+    ];
+    
+    featuresList.innerHTML = badgeFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                    ${f.badge === 'new' ? '<span class="new-badge">NEW</span>' : ''}
+                    ${f.badge === 'hot' ? '<span class="hot-badge">🔥 HOT</span>' : ''}
+                    ${f.badge === 'coming-soon' ? '<span class="countdown-badge">⏰ Coming Soon</span>' : ''}
+                </div>
+            </div>
+            <div class="feature-description">${f.description}</div>
+        </div>
+    `).join('');
+}
+
+// 6. Roadmap - Features with roadmap context
+function renderRoadmapFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const roadmapFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Q3 2024 - Released", status: 'released' },
+        { id: 2, title: "Enhanced Vendor Management", description: "Q3 2024 - Released", status: 'released' },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Q4 2024 - In Progress", status: 'in-progress' },
+        { id: 4, title: "Mobile App Integration", description: "Q4 2024 - Coming Soon", status: 'upcoming' }
+    ];
+    
+    featuresList.innerHTML = roadmapFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                    ${f.status === 'released' ? '<span style="color: #2ecc71; font-size: 1.2rem;">✓</span>' : ''}
+                    ${f.status === 'in-progress' ? '<span style="color: #667eea; font-size: 1.2rem;">🚀</span>' : ''}
+                    ${f.status === 'upcoming' ? '<span style="color: #95a5a6; font-size: 1.2rem;">📅</span>' : ''}
+                </div>
+            </div>
+            <div class="feature-description">${f.description}</div>
+        </div>
+    `).join('');
+}
+
+// 7. Metrics - Features with adoption progress bars
+function renderMetricsFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const metricsFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list", adoptionRate: 78, enabled: true },
+        { id: 2, title: "Enhanced Vendor Management", description: "Toggle between subscriber and vendor views", adoptionRate: 65, enabled: true },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop", adoptionRate: 45, enabled: false },
+        { id: 4, title: "Mobile App Integration", description: "Access features on-the-go", adoptionRate: 12, enabled: false }
+    ];
+    
+    featuresList.innerHTML = metricsFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" ${f.enabled ? 'checked' : ''} onchange="toggleFeature(${f.id}, this.checked)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="feature-description">${f.description}</div>
+            <div class="feature-footer">
+                <div class="feature-meta">
+                    <div class="adoption-rate">
+                        <span>📊 ${f.adoptionRate}% adoption</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${f.adoptionRate}%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// 8. Suggestions - Simple list emphasizing the suggestion form
+function renderSuggestionsFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    featuresList.innerHTML = `
+        <div class="feature-item" style="text-align: center; padding: 2rem;">
+            <h3 style="color: #2c3e50; margin-bottom: 1rem;">✨ Have an idea for a new feature?</h3>
+            <p style="color: #666; margin-bottom: 1.5rem;">We'd love to hear your suggestions! Click the button below to submit your feature request.</p>
+            <div style="font-size: 3rem; margin: 1rem 0;">💡</div>
+        </div>
+    `;
+}
+
+// 9. Full - Everything combined
+function renderFullFeatures() {
+    renderFeatures(features, 'full');
 }
 
 // Render features in the dropdown
@@ -318,6 +527,10 @@ function startCountdownTimers() {
 }
 
 function updateCountdown(feature) {
+    updateCountdownForFeature(feature);
+}
+
+function updateCountdownForFeature(feature) {
     const countdownElement = document.getElementById(`countdown-${feature.id}`);
     if (!countdownElement) return;
     
