@@ -2,7 +2,7 @@
 const features = [
     {
         id: 1,
-        title: "New Contracts Landing Page",
+        title: "Contracts Landing Page",
         description: "Personalize your contracts list with the columns and filters you need",
         enabled: true,
         isNew: true,
@@ -12,7 +12,7 @@ const features = [
     },
     {
         id: 2,
-        title: "Enhanced Vendor Management",
+        title: "Vendor Management",
         description: "Easily search, filter, and toggle between subscriber and vendor views",
         enabled: true,
         isNew: true,
@@ -22,7 +22,7 @@ const features = [
     },
     {
         id: 3,
-        title: "Advanced Reporting Dashboard",
+        title: "Insights Dashboard",
         description: "Create custom reports with drag-and-drop widgets and real-time data",
         enabled: false,
         isNew: true,
@@ -30,37 +30,6 @@ const features = [
         adoptionRate: 45,
         releaseDate: "2024-10-01",
         category: "Analytics"
-    },
-    {
-        id: 4,
-        title: "Mobile App Integration",
-        description: "Access key features on-the-go with our new mobile companion app",
-        enabled: false,
-        isNew: true,
-        countdown: true,
-        launchDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 5 days from now
-        adoptionRate: 0,
-        category: "Mobile"
-    },
-    {
-        id: 5,
-        title: "AI-Powered Insights",
-        description: "Get intelligent recommendations based on your usage patterns",
-        enabled: false,
-        countdown: true,
-        launchDate: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days from now
-        adoptionRate: 0,
-        category: "AI"
-    },
-    {
-        id: 6,
-        title: "Custom Workflow Builder",
-        description: "Create automated workflows tailored to your processes",
-        enabled: false,
-        countdown: true,
-        launchDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
-        adoptionRate: 0,
-        category: "Automation"
     }
 ];
 
@@ -199,10 +168,9 @@ function renderFeaturesForMode(mode) {
 function renderBasicFeatures() {
     const featuresList = document.getElementById('featuresList');
     const basicFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", enabled: true },
-        { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", enabled: true },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets and real-time data", enabled: false },
-       
+        { id: 1, title: "Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", enabled: true },
+        { id: 2, title: "Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", enabled: true },
+        { id: 3, title: "Insights Dashboard", description: "Create custom reports with drag-and-drop widgets and real-time data", enabled: false }
     ];
     
     featuresList.innerHTML = basicFeatures.map(f => `
@@ -225,10 +193,9 @@ function renderBasicFeatures() {
 function renderReleaseNotesFeatures() {
     const featuresList = document.getElementById('featuresList');
     const releaseFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", version: "v2.1.0" },
-        { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", version: "v2.2.0" },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets", version: "v2.3.0" },
-     
+        { id: 1, title: "Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", version: "v2.1.0" },
+        { id: 2, title: "Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", version: "v2.2.0" },
+        { id: 3, title: "Insights Dashboard", description: "Create custom reports with drag-and-drop widgets", version: "v2.3.0" }
     ];
     
     featuresList.innerHTML = releaseFeatures.map(f => `
@@ -248,9 +215,9 @@ function renderReleaseNotesFeatures() {
 function renderConfettiFeatures() {
     const featuresList = document.getElementById('featuresList');
     const confettiFeatures = [
-        { id: 1, title: "Advanced Reporting Dashboard", description: "Toggle ON to see confetti celebration! 🎉", enabled: false },
-        { id: 2, title: "Mobile App Integration", description: "Enable this feature for a surprise! 🎊", enabled: false },
-        { id: 3, title: "AI-Powered Insights", description: "Try enabling this one too! ✨", enabled: false }
+        { id: 1, title: "Contracts Landing Page", description: "Toggle ON to see confetti celebration! 🎉", enabled: false },
+        { id: 2, title: "Vendor Management", description: "Enable this feature for a surprise! 🎊", enabled: false },
+        { id: 3, title: "Insights Dashboard", description: "Try enabling this one too! ✨", enabled: false }
     ];
     
     featuresList.innerHTML = confettiFeatures.map(f => `
@@ -274,9 +241,9 @@ function renderCountdownFeatures() {
     const featuresList = document.getElementById('featuresList');
     const now = new Date();
     const countdownFeatures = [
-        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", launchDate: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000) }, // 5 days from now
-        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000) }, // 15 days from now
-        { id: 6, title: "Custom Workflow Builder", description: "Create automated workflows tailored to your processes", launchDate: new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) } // 30 days from now
+        { id: 1, title: "Contracts Landing Page", description: "Launching soon with enhanced personalization", launchDate: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000) }, // 5 days from now
+        { id: 2, title: "Vendor Management", description: "Advanced filtering and vendor views coming soon", launchDate: new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000) }, // 15 days from now
+        { id: 3, title: "Insights Dashboard", description: "Powerful analytics and custom reports", launchDate: new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) } // 30 days from now
     ];
     
     featuresList.innerHTML = countdownFeatures.map(f => `
@@ -301,9 +268,9 @@ function renderCountdownFeatures() {
 function renderBadgeFeatures() {
     const featuresList = document.getElementById('featuresList');
     const badgeFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Just released this week", badge: 'new' },
-        { id: 2, title: "Enhanced Vendor Management", description: "Trending feature with high adoption", badge: 'hot' },
-        { id: 3, title: "Mobile App Integration", description: "Coming very soon!", badge: 'coming-soon' }
+        { id: 1, title: "Contracts Landing Page", description: "Just released this week", badge: 'new' },
+        { id: 2, title: "Vendor Management", description: "Trending feature with high adoption", badge: 'hot' },
+        { id: 3, title: "Insights Dashboard", description: "Coming very soon!", badge: 'coming-soon' }
     ];
     
     featuresList.innerHTML = badgeFeatures.map(f => `
@@ -325,9 +292,9 @@ function renderBadgeFeatures() {
 function renderRoadmapFeatures() {
     const featuresList = document.getElementById('featuresList');
     const roadmapFeatures = [
-        { id: 1, title: "Enhanced Vendor Management", description: "Q3 2024 - Released", status: 'released' },
-        { id: 2, title: "Advanced Reporting Dashboard", description: "Q4 2024 - In Progress", status: 'in-progress' },
-        { id: 3, title: "Mobile App Integration", description: "Q4 2024 - Coming Soon", status: 'upcoming' }
+        { id: 1, title: "Contracts Landing Page", description: "Q3 2024 - Released", status: 'released' },
+        { id: 2, title: "Vendor Management", description: "Q4 2024 - In Progress", status: 'in-progress' },
+        { id: 3, title: "Insights Dashboard", description: "Q4 2024 - Coming Soon", status: 'upcoming' }
     ];
     
     featuresList.innerHTML = roadmapFeatures.map(f => `
@@ -349,9 +316,9 @@ function renderRoadmapFeatures() {
 function renderMetricsFeatures() {
     const featuresList = document.getElementById('featuresList');
     const metricsFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list", adoptionRate: 78, enabled: true },
-        { id: 2, title: "Enhanced Vendor Management", description: "Toggle between subscriber and vendor views", adoptionRate: 65, enabled: true },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop", adoptionRate: 45, enabled: false }
+        { id: 1, title: "Contracts Landing Page", description: "Personalize your contracts list", adoptionRate: 78, enabled: true },
+        { id: 2, title: "Vendor Management", description: "Toggle between subscriber and vendor views", adoptionRate: 65, enabled: true },
+        { id: 3, title: "Insights Dashboard", description: "Create custom reports with drag-and-drop", adoptionRate: 45, enabled: false }
     ];
     
     featuresList.innerHTML = metricsFeatures.map(f => `
@@ -384,9 +351,9 @@ function renderMetricsFeatures() {
 function renderSuggestionsFeatures() {
     const featuresList = document.getElementById('featuresList');
     const suggestionFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Recently released feature", enabled: true },
-        { id: 2, title: "Enhanced Vendor Management", description: "Currently available to enable", enabled: false },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Try it out and give feedback!", enabled: false }
+        { id: 1, title: "Contracts Landing Page", description: "Recently released feature", enabled: true },
+        { id: 2, title: "Vendor Management", description: "Currently available to enable", enabled: false },
+        { id: 3, title: "Insights Dashboard", description: "Try it out and give feedback!", enabled: false }
     ];
     
     featuresList.innerHTML = suggestionFeatures.map(f => `
