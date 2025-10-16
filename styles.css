@@ -512,6 +512,64 @@ input:checked + .slider:before {
     transform: translate(2px, -2px);
 }
 
+/* Learn More Links */
+.learn-more-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.learn-more-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.learn-more-link.help-link {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+}
+
+.learn-more-link.help-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.learn-more-link.demo-link {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.learn-more-link.demo-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.learn-more-link .external-icon {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.learn-more-link:hover .external-icon {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
 /* Responsive Grid */
 @media (max-width: 768px) {
     .grid-container {

@@ -54,7 +54,8 @@ function initializeAllButtons() {
         { id: 'btn6', mode: 'roadmap' },
         { id: 'btn7', mode: 'metrics' },
         { id: 'btn8', mode: 'suggestions' },
-        { id: 'btn9', mode: 'full' }
+        { id: 'btn9', mode: 'learn-more' },
+        { id: 'btn10', mode: 'full' }
     ];
     
     buttons.forEach(btn => {
@@ -164,6 +165,9 @@ function renderFeaturesForMode(mode) {
             break;
         case 'suggestions':
             renderSuggestionsFeatures();
+            break;
+        case 'learn-more':
+            renderLearnMoreFeatures();
             break;
         case 'full':
             renderFullFeatures();
@@ -381,7 +385,56 @@ function renderSuggestionsFeatures() {
     `).join('');
 }
 
-// 9. Full - Everything combined
+// 9. Learn More - Features with documentation links and demo buttons
+function renderLearnMoreFeatures() {
+    const featuresList = document.getElementById('featuresList');
+    const learnMoreFeatures = [
+        { 
+            id: 1, 
+            title: "Contracts Landing Page", 
+            description: "Personalize your contracts list with the columns and filters you need",
+            helpUrl: "https://help.opengov.com/contracts/landing-page",
+            demoUrl: "https://demo.opengov.com/contracts-walkthrough"
+        },
+        { 
+            id: 2, 
+            title: "Vendor Management", 
+            description: "Easily search, filter, and toggle between subscriber and vendor views",
+            helpUrl: "https://help.opengov.com/vendors/management",
+            demoUrl: "https://demo.opengov.com/vendor-demo"
+        },
+        { 
+            id: 3, 
+            title: "Insights Dashboard", 
+            description: "Create custom reports with drag-and-drop widgets and real-time data",
+            helpUrl: "https://help.opengov.com/analytics/insights-dashboard",
+            demoUrl: "https://demo.opengov.com/insights-prototype"
+        }
+    ];
+    
+    featuresList.innerHTML = learnMoreFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+            </div>
+            <div class="feature-description">${f.description}</div>
+            <div class="learn-more-links">
+                <a href="${f.helpUrl}" target="_blank" class="learn-more-link help-link">
+                    📖 Learn More
+                    <span class="external-icon">↗</span>
+                </a>
+                <a href="${f.demoUrl}" target="_blank" class="learn-more-link demo-link">
+                    🎮 Try Demo
+                    <span class="external-icon">↗</span>
+                </a>
+            </div>
+        </div>
+    `).join('');
+}
+
+// 10. Full - Everything combined
 function renderFullFeatures() {
     // Only show 3 features even in full mode
     renderFeatures(features.slice(0, 3), 'full');
