@@ -179,7 +179,7 @@ function renderBasicFeatures() {
         { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", enabled: true },
         { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", enabled: true },
         { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets and real-time data", enabled: false },
-        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", enabled: false }
+       
     ];
     
     featuresList.innerHTML = basicFeatures.map(f => `
@@ -205,7 +205,7 @@ function renderReleaseNotesFeatures() {
         { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list with the columns and filters you need", version: "v2.1.0" },
         { id: 2, title: "Enhanced Vendor Management", description: "Easily search, filter, and toggle between subscriber and vendor views", version: "v2.2.0" },
         { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop widgets", version: "v2.3.0" },
-        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go", version: "v2.4.0" }
+     
     ];
     
     featuresList.innerHTML = releaseFeatures.map(f => `
@@ -226,7 +226,8 @@ function renderConfettiFeatures() {
     const featuresList = document.getElementById('featuresList');
     const confettiFeatures = [
         { id: 1, title: "Advanced Reporting Dashboard", description: "Toggle ON to see confetti celebration! 🎉", enabled: false },
-        { id: 2, title: "Mobile App Integration", description: "Enable this feature for a surprise! 🎊", enabled: false }
+        { id: 2, title: "Mobile App Integration", description: "Enable this feature for a surprise! 🎊", enabled: false },
+        { id: 3, title: "AI-Powered Insights", description: "Try enabling this one too! ✨", enabled: false }
     ];
     
     featuresList.innerHTML = confettiFeatures.map(f => `
@@ -250,7 +251,8 @@ function renderCountdownFeatures() {
     const featuresList = document.getElementById('featuresList');
     const countdownFeatures = [
         { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", launchDate: new Date("2024-10-25T09:00:00") },
-        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date("2024-11-15T09:00:00") }
+        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date("2024-11-15T09:00:00") },
+        { id: 6, title: "Custom Workflow Builder", description: "Create automated workflows tailored to your processes", launchDate: new Date("2024-12-01T09:00:00") }
     ];
     
     featuresList.innerHTML = countdownFeatures.map(f => `
@@ -277,9 +279,7 @@ function renderBadgeFeatures() {
     const badgeFeatures = [
         { id: 1, title: "New Contracts Landing Page", description: "Just released this week", badge: 'new' },
         { id: 2, title: "Enhanced Vendor Management", description: "Trending feature with high adoption", badge: 'hot' },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Popular among power users", badge: 'new' },
-        { id: 4, title: "Mobile App Integration", description: "Coming very soon!", badge: 'coming-soon' },
-        { id: 5, title: "AI-Powered Insights", description: "Highly anticipated feature", badge: 'hot' }
+        { id: 3, title: "Mobile App Integration", description: "Coming very soon!", badge: 'coming-soon' }
     ];
     
     featuresList.innerHTML = badgeFeatures.map(f => `
@@ -301,10 +301,9 @@ function renderBadgeFeatures() {
 function renderRoadmapFeatures() {
     const featuresList = document.getElementById('featuresList');
     const roadmapFeatures = [
-        { id: 1, title: "New Contracts Landing Page", description: "Q3 2024 - Released", status: 'released' },
-        { id: 2, title: "Enhanced Vendor Management", description: "Q3 2024 - Released", status: 'released' },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Q4 2024 - In Progress", status: 'in-progress' },
-        { id: 4, title: "Mobile App Integration", description: "Q4 2024 - Coming Soon", status: 'upcoming' }
+        { id: 1, title: "Enhanced Vendor Management", description: "Q3 2024 - Released", status: 'released' },
+        { id: 2, title: "Advanced Reporting Dashboard", description: "Q4 2024 - In Progress", status: 'in-progress' },
+        { id: 3, title: "Mobile App Integration", description: "Q4 2024 - Coming Soon", status: 'upcoming' }
     ];
     
     featuresList.innerHTML = roadmapFeatures.map(f => `
@@ -328,8 +327,7 @@ function renderMetricsFeatures() {
     const metricsFeatures = [
         { id: 1, title: "New Contracts Landing Page", description: "Personalize your contracts list", adoptionRate: 78, enabled: true },
         { id: 2, title: "Enhanced Vendor Management", description: "Toggle between subscriber and vendor views", adoptionRate: 65, enabled: true },
-        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop", adoptionRate: 45, enabled: false },
-        { id: 4, title: "Mobile App Integration", description: "Access features on-the-go", adoptionRate: 12, enabled: false }
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Create custom reports with drag-and-drop", adoptionRate: 45, enabled: false }
     ];
     
     featuresList.innerHTML = metricsFeatures.map(f => `
@@ -361,18 +359,32 @@ function renderMetricsFeatures() {
 // 8. Suggestions - Simple list emphasizing the suggestion form
 function renderSuggestionsFeatures() {
     const featuresList = document.getElementById('featuresList');
-    featuresList.innerHTML = `
-        <div class="feature-item" style="text-align: center; padding: 2rem;">
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">✨ Have an idea for a new feature?</h3>
-            <p style="color: #666; margin-bottom: 1.5rem;">We'd love to hear your suggestions! Click the button below to submit your feature request.</p>
-            <div style="font-size: 3rem; margin: 1rem 0;">💡</div>
+    const suggestionFeatures = [
+        { id: 1, title: "New Contracts Landing Page", description: "Recently released feature", enabled: true },
+        { id: 2, title: "Enhanced Vendor Management", description: "Currently available to enable", enabled: false },
+        { id: 3, title: "Advanced Reporting Dashboard", description: "Try it out and give feedback!", enabled: false }
+    ];
+    
+    featuresList.innerHTML = suggestionFeatures.map(f => `
+        <div class="feature-item">
+            <div class="feature-header">
+                <div class="feature-title-wrapper">
+                    <span class="feature-title">${f.title}</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" ${f.enabled ? 'checked' : ''}>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="feature-description">${f.description}</div>
         </div>
-    `;
+    `).join('');
 }
 
 // 9. Full - Everything combined
 function renderFullFeatures() {
-    renderFeatures(features, 'full');
+    // Only show 3 features even in full mode
+    renderFeatures(features.slice(0, 3), 'full');
 }
 
 // Render features in the dropdown
