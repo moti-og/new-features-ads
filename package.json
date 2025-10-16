@@ -1,0 +1,27 @@
+{
+  "name": "new-features-ads",
+  "version": "1.0.0",
+  "description": "Interactive prototype for exploring new features discovery and adoption experiences",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve",
+    "dev": "npx serve -l 8000"
+  },
+  "keywords": [
+    "features",
+    "prototype",
+    "ui",
+    "ux",
+    "confetti",
+    "release-notes"
+  ],
+  "author": "OpenGov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moti-og/new-features-ads.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+

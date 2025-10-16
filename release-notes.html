@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Notes - Feature Updates</title>
+    <link rel="stylesheet" href="release-notes.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">← Back to App</a>
+                <h1>📋 Release Notes</h1>
+                <p class="subtitle">Stay up to date with our latest features and improvements</p>
+            </div>
+        </header>
+
+        <div class="filters-bar">
+            <div class="filter-group">
+                <label>Filter by:</label>
+                <button class="filter-btn active" onclick="filterBy('all')">All</button>
+                <button class="filter-btn" onclick="filterBy('features')">Features</button>
+                <button class="filter-btn" onclick="filterBy('improvements')">Improvements</button>
+                <button class="filter-btn" onclick="filterBy('fixes')">Bug Fixes</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search releases..." id="searchInput" oninput="searchReleases()">
+            </div>
+        </div>
+
+        <div class="timeline" id="timeline">
+            <!-- Release entries will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="release-notes.js"></script>
+</body>
+</html>
+

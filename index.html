@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Features Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <span class="logo">🎯 OpenGov Demo</span>
+                </div>
+                <div class="nav-right">
+                    <button class="new-features-btn" id="newFeaturesBtn">
+                        🎁 New Features
+                        <span class="feature-count-badge" id="featureCountBadge">4</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <button class="create-btn">+ Create</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- New Features Dropdown -->
+        <div class="features-dropdown" id="featuresDropdown">
+            <div class="dropdown-header">
+                <h3>New Features</h3>
+                <a href="release-notes.html" class="view-all-link" target="_blank">
+                    📋 View Full Release Notes
+                </a>
+            </div>
+            
+            <div class="features-list" id="featuresList">
+                <!-- Features will be dynamically inserted here -->
+            </div>
+
+            <div class="dropdown-footer">
+                <button class="feedback-btn" onclick="showFeedbackModal()">
+                    💬 Suggest a Feature
+                </button>
+                <button class="roadmap-btn" onclick="showRoadmap()">
+                    🗺️ View Roadmap
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="hero-section">
+                <h1>Welcome to the Feature Discovery Experience</h1>
+                <p class="subtitle">Explore and enable new features as they're released!</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Total Features</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">New This Month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">67%</div>
+                        <div class="stat-label">Adoption Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Feedback Modal -->
+        <div class="modal" id="feedbackModal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeFeedbackModal()">&times;</span>
+                <h2>Suggest a New Feature</h2>
+                <form onsubmit="submitFeatureRequest(event)">
+                    <input type="text" placeholder="Feature Title" required>
+                    <textarea placeholder="Describe your feature idea..." rows="4" required></textarea>
+                    <select>
+                        <option value="">Select Priority</option>
+                        <option value="low">Nice to Have</option>
+                        <option value="medium">Would Really Help</option>
+                        <option value="high">Critical for My Work</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Roadmap Modal -->
+        <div class="modal" id="roadmapModal">
+            <div class="modal-content roadmap-modal">
+                <span class="close-modal" onclick="closeRoadmap()">&times;</span>
+                <h2>Feature Roadmap</h2>
+                <div class="roadmap-timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker">✓</div>
+                        <div class="timeline-content">
+                            <h4>Q3 2024 - Completed</h4>
+                            <ul>
+                                <li>New Contracts Landing Page</li>
+                                <li>Enhanced Vendor Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-marker">🚀</div>
+                        <div class="timeline-content">
+                            <h4>Q4 2024 - Current</h4>
+                            <ul>
+                                <li>Advanced Reporting Dashboard</li>
+                                <li>Mobile App Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker">📅</div>
+                        <div class="timeline-content">
+                            <h4>Q1 2025 - Upcoming</h4>
+                            <ul>
+                                <li>AI-Powered Insights</li>
+                                <li>Custom Workflow Builder</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
