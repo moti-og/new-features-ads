@@ -133,10 +133,14 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     // Ensure dropdown is visible in viewport
     setTimeout(() => {
         const dropdownRect = dropdown.getBoundingClientRect();
-        const isFullyVisible = dropdownRect.bottom <= window.innerHeight;
+        const dropdownHeight = dropdown.offsetHeight;
+        const buttonRect = buttonElement.getBoundingClientRect();
+        const spaceNeeded = buttonRect.top + buttonRect.height + dropdownHeight + 50; // 50px buffer
         
-        if (!isFullyVisible) {
-            dropdown.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // Check if there's enough space
+        if (spaceNeeded > window.innerHeight) {
+            // Scroll the button into view with some top offset
+            buttonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }, 100);
 }

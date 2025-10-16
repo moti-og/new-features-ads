@@ -43,6 +43,8 @@ html {
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+    padding-bottom: 600px;
+    position: relative;
 }
 
 /* Grid Item */
