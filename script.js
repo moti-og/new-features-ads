@@ -38,7 +38,7 @@ const features = [
         enabled: false,
         isNew: true,
         countdown: true,
-        launchDate: new Date("2024-10-25T09:00:00"),
+        launchDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 5 days from now
         adoptionRate: 0,
         category: "Mobile"
     },
@@ -48,9 +48,19 @@ const features = [
         description: "Get intelligent recommendations based on your usage patterns",
         enabled: false,
         countdown: true,
-        launchDate: new Date("2024-11-15T09:00:00"),
+        launchDate: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days from now
         adoptionRate: 0,
         category: "AI"
+    },
+    {
+        id: 6,
+        title: "Custom Workflow Builder",
+        description: "Create automated workflows tailored to your processes",
+        enabled: false,
+        countdown: true,
+        launchDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
+        adoptionRate: 0,
+        category: "Automation"
     }
 ];
 
@@ -249,10 +259,11 @@ function renderConfettiFeatures() {
 // 4. Countdown - Only features with countdown timers
 function renderCountdownFeatures() {
     const featuresList = document.getElementById('featuresList');
+    const now = new Date();
     const countdownFeatures = [
-        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", launchDate: new Date("2024-10-25T09:00:00") },
-        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date("2024-11-15T09:00:00") },
-        { id: 6, title: "Custom Workflow Builder", description: "Create automated workflows tailored to your processes", launchDate: new Date("2024-12-01T09:00:00") }
+        { id: 4, title: "Mobile App Integration", description: "Access key features on-the-go with our new mobile companion app", launchDate: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000) }, // 5 days from now
+        { id: 5, title: "AI-Powered Insights", description: "Get intelligent recommendations based on your usage patterns", launchDate: new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000) }, // 15 days from now
+        { id: 6, title: "Custom Workflow Builder", description: "Create automated workflows tailored to your processes", launchDate: new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) } // 30 days from now
     ];
     
     featuresList.innerHTML = countdownFeatures.map(f => `
