@@ -388,27 +388,28 @@ function renderSuggestionsFeatures() {
 // 9. Learn More - Features with documentation links and demo buttons
 function renderLearnMoreFeatures() {
     const featuresList = document.getElementById('featuresList');
+    const helpUrl = "https://opengov.my.site.com/support/s/";
     const demoUrl = "https://www.youtube.com/watch?v=EE-xtCF3T94&list=PL9JM2aC37BG03vlqyhiYX54NG_thqqvbg";
     const learnMoreFeatures = [
         { 
             id: 1, 
             title: "Contracts Landing Page", 
             description: "Personalize your contracts list with the columns and filters you need",
-            helpUrl: "https://help.opengov.com/contracts/landing-page",
+            helpUrl: helpUrl,
             demoUrl: demoUrl
         },
         { 
             id: 2, 
             title: "Vendor Management", 
             description: "Easily search, filter, and toggle between subscriber and vendor views",
-            helpUrl: "https://help.opengov.com/vendors/management",
+            helpUrl: helpUrl,
             demoUrl: demoUrl
         },
         { 
             id: 3, 
             title: "Insights Dashboard", 
             description: "Create custom reports with drag-and-drop widgets and real-time data",
-            helpUrl: "https://help.opengov.com/analytics/insights-dashboard",
+            helpUrl: helpUrl,
             demoUrl: demoUrl
         }
     ];
