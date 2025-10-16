@@ -127,8 +127,21 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     // Show/hide elements based on mode
     document.getElementById('releaseNotesLink').style.display = 
         (mode === 'release-notes' || mode === 'full') ? 'block' : 'none';
-    document.getElementById('dropdownFooter').style.display = 
-        (mode === 'suggestions' || mode === 'roadmap' || mode === 'full') ? 'flex' : 'none';
+    
+    // Show dropdown footer for suggestions and full mode only
+    const dropdownFooter = document.getElementById('dropdownFooter');
+    if (mode === 'roadmap') {
+        dropdownFooter.style.display = 'flex';
+        // Hide the suggestion button but keep the roadmap button
+        const feedbackBtn = dropdownFooter.querySelector('.feedback-btn');
+        if (feedbackBtn) feedbackBtn.style.display = 'none';
+    } else if (mode === 'suggestions' || mode === 'full') {
+        dropdownFooter.style.display = 'flex';
+        const feedbackBtn = dropdownFooter.querySelector('.feedback-btn');
+        if (feedbackBtn) feedbackBtn.style.display = 'flex';
+    } else {
+        dropdownFooter.style.display = 'none';
+    }
     
     dropdown.classList.add('show');
     buttonElement.classList.add('active');
