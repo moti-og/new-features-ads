@@ -394,21 +394,21 @@ function renderLearnMoreFeatures() {
             title: "Contracts Landing Page", 
             description: "Personalize your contracts list with the columns and filters you need",
             helpUrl: "https://help.opengov.com/contracts/landing-page",
-            demoUrl: "https://demo.opengov.com/contracts-walkthrough"
+            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
         },
         { 
             id: 2, 
             title: "Vendor Management", 
             description: "Easily search, filter, and toggle between subscriber and vendor views",
             helpUrl: "https://help.opengov.com/vendors/management",
-            demoUrl: "https://demo.opengov.com/vendor-demo"
+            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
         },
         { 
             id: 3, 
             title: "Insights Dashboard", 
             description: "Create custom reports with drag-and-drop widgets and real-time data",
             helpUrl: "https://help.opengov.com/analytics/insights-dashboard",
-            demoUrl: "https://demo.opengov.com/insights-prototype"
+            demoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
         }
     ];
     
