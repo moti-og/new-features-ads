@@ -583,25 +583,29 @@ function updateCountdownForFeature(feature) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
+    // Format the launch date
+    const launchDate = new Date(feature.launchDate);
+    const dateStr = launchDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    
+    // Calculate total time and progress percentage
+    // Assume features are announced 30 days before launch
+    const totalTime = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
+    const timeElapsed = totalTime - distance;
+    const progressPercent = Math.max(0, Math.min(100, (timeElapsed / totalTime) * 100));
+    
+    // Format time string
+    let timeStr = '';
+    if (days > 0) timeStr += `${days}d `;
+    timeStr += `${hours}h ${minutes}m ${seconds}s`;
+    
     countdownElement.innerHTML = `
-        <div style="display: flex; gap: 0.5rem;">
-            ${days > 0 ? `
-                <div class="countdown-unit">
-                    <span class="countdown-value">${days}</span>
-                    <span class="countdown-label">days</span>
-                </div>
-            ` : ''}
-            <div class="countdown-unit">
-                <span class="countdown-value">${hours.toString().padStart(2, '0')}</span>
-                <span class="countdown-label">hrs</span>
+        <div class="countdown-progress-container">
+            <div class="countdown-header">
+                <span class="countdown-time">${timeStr}</span>
+                <span class="countdown-date">📅 ${dateStr}</span>
             </div>
-            <div class="countdown-unit">
-                <span class="countdown-value">${minutes.toString().padStart(2, '0')}</span>
-                <span class="countdown-label">min</span>
-            </div>
-            <div class="countdown-unit">
-                <span class="countdown-value">${seconds.toString().padStart(2, '0')}</span>
-                <span class="countdown-label">sec</span>
+            <div class="countdown-progress-bar">
+                <div class="countdown-progress-fill" style="width: ${progressPercent}%"></div>
             </div>
         </div>
     `;
