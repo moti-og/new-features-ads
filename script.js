@@ -99,15 +99,24 @@ function openDropdownForButton(buttonId, mode, buttonElement) {
     
     // Show dropdown footer for suggestions and full mode only
     const dropdownFooter = document.getElementById('dropdownFooter');
+    const feedbackBtn = dropdownFooter.querySelector('.feedback-btn');
+    const roadmapLink = dropdownFooter.querySelector('.roadmap-link');
+    
     if (mode === 'roadmap') {
         dropdownFooter.style.display = 'flex';
-        // Hide the suggestion button but keep the roadmap button
-        const feedbackBtn = dropdownFooter.querySelector('.feedback-btn');
+        // Hide the suggestion button but keep the roadmap link
         if (feedbackBtn) feedbackBtn.style.display = 'none';
-    } else if (mode === 'suggestions' || mode === 'full') {
+        if (roadmapLink) roadmapLink.style.display = 'flex';
+    } else if (mode === 'suggestions') {
         dropdownFooter.style.display = 'flex';
-        const feedbackBtn = dropdownFooter.querySelector('.feedback-btn');
+        // Show suggestion button but hide roadmap link
         if (feedbackBtn) feedbackBtn.style.display = 'flex';
+        if (roadmapLink) roadmapLink.style.display = 'none';
+    } else if (mode === 'full') {
+        dropdownFooter.style.display = 'flex';
+        // Show both buttons
+        if (feedbackBtn) feedbackBtn.style.display = 'flex';
+        if (roadmapLink) roadmapLink.style.display = 'flex';
     } else {
         dropdownFooter.style.display = 'none';
     }
