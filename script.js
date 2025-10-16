@@ -389,7 +389,7 @@ function renderSuggestionsFeatures() {
 function renderLearnMoreFeatures() {
     const featuresList = document.getElementById('featuresList');
     const helpUrl = "https://opengov.my.site.com/support/s/";
-    const demoUrl = "https://www.youtube.com/watch?v=EE-xtCF3T94&list=PL9JM2aC37BG03vlqyhiYX54NG_thqqvbg";
+    const demoUrl = "https://www.youtube.com/watch?v=2qBlE2-WL60";
     const learnMoreFeatures = [
         { 
             id: 1, 
