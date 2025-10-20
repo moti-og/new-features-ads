@@ -236,6 +236,7 @@ html {
     margin: 0 auto;
     padding-bottom: 600px;
     position: relative;
+    justify-content: center;
 }
 
 /* Grid Item */
