@@ -9,7 +9,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #333;
-    padding: 2rem;
+    padding: 2rem 1rem;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -38,7 +38,7 @@ html {
 
 /* Overview Section */
 .overview-section {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto 3rem;
     background: white;
     border-radius: 16px;
@@ -106,7 +106,7 @@ html {
 
 /* Current State Section */
 .current-state-section {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto 3rem;
     background: white;
     border-radius: 16px;
@@ -230,13 +230,24 @@ html {
 /* Grid Container */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 450px));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding-bottom: 600px;
     position: relative;
-    justify-content: center;
+}
+
+@media (max-width: 1400px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Grid Item */
