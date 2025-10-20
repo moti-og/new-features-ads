@@ -13,7 +13,60 @@
         <p>Let's educate our customers and transform surprise into excitement!</p>
     </div>
 
+    <!-- Overview Section -->
+    <div class="overview-section">
+        <div class="overview-content">
+            <h2>📋 About This Prototype</h2>
+            <p><strong>What is this?</strong> This is a <strong>non-functional prototype</strong> designed to explore and visualize different approaches to feature announcements and user adoption.</p>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h3>🎯 Purpose</h3>
+                    <ul>
+                        <li>Visualize 10 distinct enhancement concepts</li>
+                        <li>Enable side-by-side strategy evaluation</li>
+                        <li>Provide detailed behavioral descriptions</li>
+                        <li>Enable rapid iteration on UX patterns</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h3>⚠️ Important</h3>
+                    <p>This prototype uses <strong>fake data</strong> and does not connect to any real systems. All interactions, metrics, and timers are simulated for demonstration purposes only.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Current State Section -->
+    <div class="current-state-section">
+        <div class="current-state-content">
+            <h2>📸 Current State: The Existing View</h2>
+            <div class="existing-view-container">
+                <div class="existing-view-image">
+                    <img src="assets/existing-view.png" alt="Current New Features Dropdown">
+                </div>
+                <div class="existing-view-description">
+                    <h3>Current Functionality:</h3>
+                    <ul>
+                        <li>✓ Simple dropdown with feature list</li>
+                        <li>✓ Toggle switches to enable/disable features</li>
+                        <li>✗ No badges, timers, or engagement mechanisms</li>
+                        <li>✗ No links to documentation or roadmaps</li>
+                    </ul>
+                    <div class="challenge-callout">
+                        <strong>The Challenge:</strong> How can we make feature discovery more engaging, educational, and effective?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="grid-container">
+        <!-- Category Header: Notification & Awareness -->
+        <div class="category-header">
+            <h2>🔔 Notification & Awareness</h2>
+            <p>Visual indicators to draw attention to new features and their status</p>
+        </div>
         <!-- Grid Item 1: Basic with Badges -->
         <div class="grid-item">
             <div class="grid-label">
@@ -36,6 +89,12 @@
                     <li><strong>Interaction:</strong> Click to see simple list with on/off toggles</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- Category Header: Education & Documentation -->
+        <div class="category-header">
+            <h2>📚 Education & Documentation</h2>
+            <p>Resources to help users learn about and adopt features</p>
         </div>
 
         <!-- Grid Item 2: Release Notes Link -->
@@ -61,6 +120,12 @@
             </div>
         </div>
 
+        <!-- Category Header: Engagement & Feedback -->
+        <div class="category-header">
+            <h2>🎯 Engagement & Feedback</h2>
+            <p>Interactive elements to encourage adoption and collect user input</p>
+        </div>
+
         <!-- Grid Item 3: Confetti Celebration -->
         <div class="grid-item">
             <div class="grid-label">
@@ -82,6 +147,12 @@
                     <li><strong>Frequency:</strong> Once per feature enable (no repeat on same session)</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- Category Header: Planning & Anticipation -->
+        <div class="category-header">
+            <h2>📅 Planning & Anticipation</h2>
+            <p>Tools to help users understand what's coming and when</p>
         </div>
 
         <!-- Grid Item 4: Countdown Timers -->
@@ -221,6 +292,12 @@
             </div>
         </div>
 
+        <!-- Category Header: Full Experience -->
+        <div class="category-header featured-category">
+            <h2>🌟 Full Experience</h2>
+            <p>Combining all enhancements into one complete implementation</p>
+        </div>
+
         <!-- Grid Item 10: All Features Combined -->
         <div class="grid-item featured">
             <div class="grid-label">
@@ -268,7 +345,7 @@
             <button class="feedback-btn" onclick="showFeedbackModal()">
                 💬 Suggest a Feature
             </button>
-            <a href="https://opengov-roadmap.vercel.app/roadmap" target="_blank" class="roadmap-link">
+            <a href="https://opengov-roadmap.vercel.app/roadmap" target="_blank" rel="noopener" class="roadmap-link">
                 🗺️ View Product Roadmap
                 <span class="external-icon">↗</span>
             </a>
@@ -283,7 +360,7 @@
             <form onsubmit="submitFeatureRequest(event)">
                 <input type="text" placeholder="Feature Title" required>
                 <textarea placeholder="Describe your feature idea..." rows="4" required></textarea>
-                <select>
+                <select aria-label="Feature Priority">
                     <option value="">Select Priority</option>
                     <option value="low">Nice to Have</option>
                     <option value="medium">Would Really Help</option>

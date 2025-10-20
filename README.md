@@ -1,10 +1,40 @@
 # 🎁 New Features Button - Concept Gallery
 
-An interactive prototype exploring different enhancement concepts for the "New Features" button in OpenGov products. This project demonstrates how to transform feature discovery from a simple notification into an engaging, educational experience.
+An interactive prototype exploring different enhancement concepts for the "New Features" button in OpenGov products.
 
-## 🎯 Project Purpose
+---
 
-This is a mock **component gallery** showcasing different approaches to feature announcements and adoption. Each variant demonstrates a unique enhancement concept, allowing stakeholders to evaluate and choose the most effective strategies for their use case.
+## 📋 Overview
+
+**What is this?**  
+This is a **non-functional prototype** designed to explore and visualize different approaches to feature announcements and user adoption. It demonstrates how the existing "New Features" button could be enhanced to improve user engagement, education, and feature discovery.
+
+**Purpose:**  
+- Visualize 10 distinct enhancement concepts in an interactive gallery
+- Allow stakeholders to evaluate different strategies side-by-side
+- Provide detailed behavioral descriptions for each concept
+- Enable rapid iteration on design and UX patterns
+
+**Important:** This prototype uses **fake data** and does not connect to any real systems. All interactions, metrics, and timers are simulated for demonstration purposes only.
+
+---
+
+## 📸 Current State: The Existing View
+
+<div align="center">
+  <img src="assets/existing-view.png" alt="Existing New Features Dropdown" width="500">
+  <p><em>The current "New Features" button with a basic dropdown list and toggle switches.</em></p>
+</div>
+
+**Current Functionality:**
+- Simple dropdown with feature list
+- Toggle switches to enable/disable features
+- No badges, timers, or additional engagement mechanisms
+- No links to documentation or roadmaps
+
+**Challenge:** How can we make feature discovery more engaging, educational, and effective?
+
+---
 
 ## 🚀 Getting Started
 
@@ -27,61 +57,55 @@ That's it! The prototype runs entirely in your browser with no dependencies or s
 
 ---
 
-## 📊 The 10 Enhancement Concepts
+## 🗂️ Enhancement Concepts (Organized by Category)
 
-### 1️⃣ Basic Badge Count
+### 🔔 Notification & Awareness
+Visual indicators to draw attention to new features and their status.
+
+#### 1️⃣ Basic Badge Count
 - Shows numerical count of new features (e.g., "3")
 - Badge disappears when user opens dropdown
 - Simple list view with toggle switches
 - **Use Case:** Minimal, non-intrusive notification
 
-### 2️⃣ Release Notes
-- "📋 View Full Release Notes" link in dropdown header
-- Opens dedicated release notes page in new tab
-- Auto-generated from Jira/Aha
-- Searchable and filterable by category
-- **Use Case:** Detailed changelog for technical users
-
-### 3️⃣ Celebration!
-- Triggers confetti animation when features are enabled
-- 3-second multi-burst celebration effect
-- Toast notification with success message
-- **Use Case:** Gamification and positive reinforcement
-
-### 4️⃣ Countdown Timers
-- Progress bars showing time until feature launch
-- Format: "4d 23h 45m 12s" with release date
-- Real-time updates every second
-- Shows "🚀 Available Now!" at launch
-- **Use Case:** Building anticipation for upcoming features
-
-### 5️⃣ Multiple Badge Types
+#### 5️⃣ Multiple Badge Types
 - **NEW:** Red/pulsing - first 14 days after release
 - **HOT:** Pink/🔥 - high-value or trending features
 - **Coming Soon:** Blue/⏰ - launching within 7 days
 - Features can have multiple badges
 - **Use Case:** Visual categorization and prioritization
 
-### 6️⃣ Feature Roadmap
+---
+
+### 📅 Planning & Anticipation
+Tools to help users understand what's coming and when.
+
+#### 4️⃣ Countdown Timers
+- Progress bars showing time until feature launch
+- Format: "4d 23h 45m 12s" with release date
+- Real-time updates every second
+- Shows "🚀 Available Now!" at launch
+- **Use Case:** Building anticipation for upcoming features
+
+#### 6️⃣ Feature Roadmap
 - Links to external product roadmap
 - Status indicators: ✓ Released, 🚀 In Progress, 📅 Upcoming
 - Quarterly timeline view
 - **Use Case:** Transparency and future-looking communication
 
-### 7️⃣ Adoption Metrics
-- Progress bars showing adoption percentage
-- Formula: (Users w/ feature ON) / (Total active users)
-- Real-time updates across organization
-- **Use Case:** Social proof and FOMO (fear of missing out)
+---
 
-### 8️⃣ Suggestion Form
-- "💬 Suggest a Feature" button in dropdown footer
-- Modal with Title, Description, Priority fields
-- Confetti + notification on submission
-- Integration with Aha for automatic idea creation
-- **Use Case:** User engagement and feedback collection
+### 📚 Education & Documentation
+Resources to help users learn about and adopt features.
 
-### 9️⃣ Documentation Links
+#### 2️⃣ Release Notes
+- "📋 View Full Release Notes" link in dropdown header
+- Opens dedicated release notes page in new tab
+- Auto-generated from Jira/Aha
+- Searchable and filterable by category
+- **Use Case:** Detailed changelog for technical users
+
+#### 9️⃣ Documentation Links
 - **"📖 Learn More"** - Links to OpenGov support site
 - **"🎮 Try Demo"** - Interactive loading modal + demo video
 - Side-by-side button layout per feature
@@ -89,7 +113,35 @@ That's it! The prototype runs entirely in your browser with no dependencies or s
 - **Use Case:** Self-service learning and onboarding
 - **Easter Egg:** Demo button shows loading screen then opens video
 
-### 🔟 Full Experience (All Features)
+---
+
+### 🎯 Engagement & Feedback
+Interactive elements to encourage adoption and collect user input.
+
+#### 3️⃣ Celebration!
+- Triggers confetti animation when features are enabled
+- 3-second multi-burst celebration effect
+- Toast notification with success message
+- **Use Case:** Gamification and positive reinforcement
+
+#### 7️⃣ Adoption Metrics
+- Progress bars showing adoption percentage
+- Formula: (Users w/ feature ON) / (Total active users)
+- Real-time updates across organization
+- **Use Case:** Social proof and FOMO (fear of missing out)
+
+#### 8️⃣ Suggestion Form
+- "💬 Suggest a Feature" button in dropdown footer
+- Modal with Title, Description, Priority fields
+- Confetti + notification on submission
+- Integration with Aha for automatic idea creation
+- **Use Case:** User engagement and feedback collection
+
+---
+
+### 🌟 Full Experience
+
+#### 🔟 All Features Combined
 - Combines ALL 9 enhancements into one complete implementation
 - Badge count + Release notes + Confetti + Timers + Badges + Metrics + Docs + Roadmap + Suggestions
 - Spans full width of grid (featured placement)
