@@ -62,10 +62,10 @@
     </div>
 
     <div class="grid-container">
-        <!-- Category Header: Notification & Awareness -->
+        <!-- Category Header: Awareness & Excitement -->
         <div class="category-header">
-            <h2>🔔 Notification & Awareness</h2>
-            <p>Visual indicators to draw attention to new features and their status</p>
+            <h2>🎉 Awareness & Excitement</h2>
+            <p>Visual indicators and celebratory elements to draw attention and create positive engagement</p>
         </div>
         <!-- Grid Item 1: Basic with Badges -->
         <div class="grid-item">
@@ -91,39 +91,27 @@
             </div>
         </div>
 
-        <!-- Category Header: Education & Documentation -->
-        <div class="category-header">
-            <h2>📚 Education & Documentation</h2>
-            <p>Resources to help users learn about and adopt features</p>
-        </div>
-
-        <!-- Grid Item 2: Release Notes Link -->
+        <!-- Grid Item 5: Multiple Badge Types -->
         <div class="grid-item">
             <div class="grid-label">
-                <h3>2. Release Notes</h3>
-                <p>Links to detailed changelog</p>
+                <h3>5. Multiple Badge Types</h3>
+                <p>NEW, HOT, Coming Soon badges</p>
             </div>
             <div class="demo-area">
-                <button class="new-features-btn" id="btn2">
-                    📋 New Features
+                <button class="new-features-btn" id="btn5">
+                    🏷️ New Features
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
             <div class="behavior-details">
                 <h4>📝 Behavior:</h4>
                 <ul>
-                    <li><strong>Link Location:</strong> "View Full Release Notes" appears in dropdown header</li>
-                    <li><strong>Opens:</strong> Current doc with release notes updates, or a new web page!</li>
-                    <li><strong>Content:</strong> Autogenerate from jira (or aha)</li>
-                    <li><strong>Filterable:</strong> Search and filter by Features, Improvements, or Fixes</li>
+                    <li><strong>NEW Badge:</strong> Red/pulsing - appears for 14 days after release</li>
+                    <li><strong>HOT Badge:</strong> Pink/🔥 - shown when we expect the feature to be popular</li>
+                    <li><strong>Coming Soon:</strong> Blue/⏰ - for features launching within 7 days</li>
+                    <li><strong>Multiple:</strong> A feature can have multiple badges simultaneously</li>
                 </ul>
             </div>
-        </div>
-
-        <!-- Category Header: Engagement & Feedback -->
-        <div class="category-header">
-            <h2>🎯 Engagement & Feedback</h2>
-            <p>Interactive elements to encourage adoption and collect user input</p>
         </div>
 
         <!-- Grid Item 3: Confetti Celebration -->
@@ -155,6 +143,29 @@
             <p>Tools to help users understand what's coming and when</p>
         </div>
 
+        <!-- Grid Item 6: Roadmap -->
+        <div class="grid-item">
+            <div class="grid-label">
+                <h3>6. Feature Roadmap</h3>
+                <p>Shows timeline of past and future features</p>
+            </div>
+            <div class="demo-area">
+                <button class="new-features-btn" id="btn6">
+                    🗺️ New Features
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+            <div class="behavior-details">
+                <h4>📝 Behavior:</h4>
+                <ul>
+                    <li><strong>Link:</strong> "View Product Roadmap" button only (no suggestion button)</li>
+                    <li><strong>Opens:</strong> External roadmap site in new tab</li>
+                    <li><strong>Status Icons:</strong> ✓ Released, 🚀 In Progress, 📅 Upcoming</li>
+                    <li><strong>Context:</strong> Shows quarter (Q3 2024) and timeline placement</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Grid Item 4: Countdown Timers -->
         <div class="grid-item">
             <div class="grid-label">
@@ -178,48 +189,54 @@
             </div>
         </div>
 
-        <!-- Grid Item 5: Multiple Badge Types -->
+        <!-- Category Header: Education -->
+        <div class="category-header">
+            <h2>📚 Education</h2>
+            <p>Resources to help users learn about and adopt features</p>
+        </div>
+
+        <!-- Grid Item 9: Learn More Links -->
         <div class="grid-item">
             <div class="grid-label">
-                <h3>5. Multiple Badge Types</h3>
-                <p>NEW, HOT, Coming Soon badges</p>
+                <h3>9. Documentation Links</h3>
+                <p>Links to help center, demos, and prototypes</p>
             </div>
             <div class="demo-area">
-                <button class="new-features-btn" id="btn5">
-                    🏷️ New Features
+                <button class="new-features-btn" id="btn9">
+                    📚 New Features
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
             <div class="behavior-details">
                 <h4>📝 Behavior:</h4>
                 <ul>
-                    <li><strong>NEW Badge:</strong> Red/pulsing - appears for 14 days after release</li>
-                    <li><strong>HOT Badge:</strong> Pink/🔥 - shown when we expect the feature to be popular</li>
-                    <li><strong>Coming Soon:</strong> Blue/⏰ - for features launching within 7 days</li>
-                    <li><strong>Multiple:</strong> A feature can have multiple badges simultaneously</li>
+                    <li><strong>"Learn More" Links:</strong> Each feature has a link to help center documentation</li>
+                    <li><strong>"Try Demo" Buttons:</strong> Click-through to interactive prototype/sandbox</li>
+                    <li><strong>Visual Indicators:</strong> External link icons and "New Window" badges</li>
+                    <li><strong>Smart Routing:</strong> Help center for released features and prototypes for upcoming ones</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Grid Item 6: Roadmap -->
+        <!-- Grid Item 2: Release Notes Link -->
         <div class="grid-item">
             <div class="grid-label">
-                <h3>6. Feature Roadmap</h3>
-                <p>Shows timeline of past and future features</p>
+                <h3>2. Release Notes</h3>
+                <p>Links to detailed changelog</p>
             </div>
             <div class="demo-area">
-                <button class="new-features-btn" id="btn6">
-                    🗺️ New Features
+                <button class="new-features-btn" id="btn2">
+                    📋 New Features
                     <span class="dropdown-arrow">▼</span>
                 </button>
             </div>
             <div class="behavior-details">
                 <h4>📝 Behavior:</h4>
                 <ul>
-                    <li><strong>Link:</strong> "View Product Roadmap" button only (no suggestion button)</li>
-                    <li><strong>Opens:</strong> External roadmap site in new tab</li>
-                    <li><strong>Status Icons:</strong> ✓ Released, 🚀 In Progress, 📅 Upcoming</li>
-                    <li><strong>Context:</strong> Shows quarter (Q3 2024) and timeline placement</li>
+                    <li><strong>Link Location:</strong> "View Full Release Notes" appears in dropdown header</li>
+                    <li><strong>Opens:</strong> Current doc with release notes updates, or a new web page!</li>
+                    <li><strong>Content:</strong> Autogenerate from jira (or aha)</li>
+                    <li><strong>Filterable:</strong> Search and filter by Features, Improvements, or Fixes</li>
                 </ul>
             </div>
         </div>
@@ -246,6 +263,12 @@
             </div>
         </div>
 
+        <!-- Category Header: Feedback -->
+        <div class="category-header">
+            <h2>💬 Feedback</h2>
+            <p>Channels for users to share ideas and requests</p>
+        </div>
+
         <!-- Grid Item 8: Feature Suggestions -->
         <div class="grid-item">
             <div class="grid-label">
@@ -265,29 +288,6 @@
                     <li><strong>Opens:</strong> Modal with form (Title, Description, Priority)</li>
                     <li><strong>Submission:</strong> Triggers confetti + success notification</li>
                     <li><strong>Integration:</strong> Auto-generate an idea in Aha and email the user with a link to that idea</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Grid Item 9: Learn More Links -->
-        <div class="grid-item">
-            <div class="grid-label">
-                <h3>9. Documentation Links</h3>
-                <p>Links to help center, demos, and prototypes</p>
-            </div>
-            <div class="demo-area">
-                <button class="new-features-btn" id="btn9">
-                    📚 New Features
-                    <span class="dropdown-arrow">▼</span>
-                </button>
-            </div>
-            <div class="behavior-details">
-                <h4>📝 Behavior:</h4>
-                <ul>
-                    <li><strong>"Learn More" Links:</strong> Each feature has a link to help center documentation</li>
-                    <li><strong>"Try Demo" Buttons:</strong> Click-through to interactive prototype/sandbox</li>
-                    <li><strong>Visual Indicators:</strong> External link icons and "New Window" badges</li>
-                    <li><strong>Smart Routing:</strong> Help center for released features and prototypes for upcoming ones</li>
                 </ul>
             </div>
         </div>

@@ -59,8 +59,8 @@ That's it! The prototype runs entirely in your browser with no dependencies or s
 
 ## 🗂️ Enhancement Concepts (Organized by Category)
 
-### 🔔 Notification & Awareness
-Visual indicators to draw attention to new features and their status.
+### 🎉 Awareness & Excitement
+Visual indicators and celebratory elements to draw attention and create positive engagement.
 
 #### 1️⃣ Basic Badge Count
 - Shows numerical count of new features (e.g., "3")
@@ -75,10 +75,22 @@ Visual indicators to draw attention to new features and their status.
 - Features can have multiple badges
 - **Use Case:** Visual categorization and prioritization
 
+#### 3️⃣ Celebration!
+- Triggers confetti animation when features are enabled
+- 3-second multi-burst celebration effect
+- Toast notification with success message
+- **Use Case:** Gamification and positive reinforcement
+
 ---
 
 ### 📅 Planning & Anticipation
 Tools to help users understand what's coming and when.
+
+#### 6️⃣ Feature Roadmap
+- Links to external product roadmap
+- Status indicators: ✓ Released, 🚀 In Progress, 📅 Upcoming
+- Quarterly timeline view
+- **Use Case:** Transparency and future-looking communication
 
 #### 4️⃣ Countdown Timers
 - Progress bars showing time until feature launch
@@ -87,23 +99,10 @@ Tools to help users understand what's coming and when.
 - Shows "🚀 Available Now!" at launch
 - **Use Case:** Building anticipation for upcoming features
 
-#### 6️⃣ Feature Roadmap
-- Links to external product roadmap
-- Status indicators: ✓ Released, 🚀 In Progress, 📅 Upcoming
-- Quarterly timeline view
-- **Use Case:** Transparency and future-looking communication
-
 ---
 
-### 📚 Education & Documentation
+### 📚 Education
 Resources to help users learn about and adopt features.
-
-#### 2️⃣ Release Notes
-- "📋 View Full Release Notes" link in dropdown header
-- Opens dedicated release notes page in new tab
-- Auto-generated from Jira/Aha
-- Searchable and filterable by category
-- **Use Case:** Detailed changelog for technical users
 
 #### 9️⃣ Documentation Links
 - **"📖 Learn More"** - Links to OpenGov support site
@@ -113,22 +112,23 @@ Resources to help users learn about and adopt features.
 - **Use Case:** Self-service learning and onboarding
 - **Easter Egg:** Demo button shows loading screen then opens video
 
----
-
-### 🎯 Engagement & Feedback
-Interactive elements to encourage adoption and collect user input.
-
-#### 3️⃣ Celebration!
-- Triggers confetti animation when features are enabled
-- 3-second multi-burst celebration effect
-- Toast notification with success message
-- **Use Case:** Gamification and positive reinforcement
+#### 2️⃣ Release Notes
+- "📋 View Full Release Notes" link in dropdown header
+- Opens dedicated release notes page in new tab
+- Auto-generated from Jira/Aha
+- Searchable and filterable by category
+- **Use Case:** Detailed changelog for technical users
 
 #### 7️⃣ Adoption Metrics
 - Progress bars showing adoption percentage
 - Formula: (Users w/ feature ON) / (Total active users)
 - Real-time updates across organization
 - **Use Case:** Social proof and FOMO (fear of missing out)
+
+---
+
+### 💬 Feedback
+Channels for users to share ideas and requests.
 
 #### 8️⃣ Suggestion Form
 - "💬 Suggest a Feature" button in dropdown footer
